@@ -42,3 +42,35 @@
 | **Calibration Curve**  | A plot comparing predicted probability vs. actual probability. | A well-calibrated model should produce a diagonal line where predicted probabilities match actual frequencies. |
 
 ---
+
+
+---
+
+### **📌 Classification Analysis Plots**
+| **Plot Name**  | **Purpose**  | **Example Understanding**  |
+|---------------|------------|---------------------------|
+| **Confusion Matrix**  | Visualizes the number of **true positives (TP), false positives (FP), true negatives (TN), and false negatives (FN)** in classification results. | If a confusion matrix for spam detection shows TP = 80, FP = 20, FN = 10, and TN = 90, the model misclassifies 20 non-spam emails as spam. |
+| **ROC Curve (Receiver Operating Characteristic Curve)**  | Plots **True Positive Rate (TPR) vs. False Positive Rate (FPR)** at various thresholds to evaluate classifier performance. | A curve closer to the top-left corner indicates a better model. |
+| **Precision-Recall (PR) Curve**  | Shows the trade-off between **precision and recall** across different thresholds. Used when class imbalance exists. | In medical diagnosis, a **high precision but low recall** model may miss critical cases, while **high recall but low precision** may generate too many false alarms. |
+| **Classification Report**  | Provides summary metrics like **Precision, Recall, F1-score, and Accuracy** in a table format. | If a model achieves **Precision = 0.85, Recall = 0.9, and F1-score = 0.875**, it indicates a well-balanced classifier. |
+
+---
+
+### **📌 Regression Analysis Plots**
+| **Plot Name**  | **Purpose**  | **Example Understanding**  |
+|---------------|------------|---------------------------|
+| **Residual Plot**  | Shows the difference between **actual and predicted values** to check model accuracy. | If residuals are randomly scattered around zero, the model has no systematic bias. |
+| **Predicted vs. Actual Plot**  | Compares the predicted outputs with actual values; ideally should form a **diagonal line**. | If the points **deviate significantly from the diagonal**, the model has **poor predictions**. |
+| **Histogram of Residuals**  | Checks whether the residuals follow a **normal distribution**, indicating a well-fitted model. | A **bell-shaped histogram** suggests the residuals are normally distributed, which is ideal for linear regression. |
+| **R² Score Visualization**  | Displays how well the model **explains the variance** in the data. | If \( R^2 = 0.9 \), 90% of the variance is explained by the model. If \( R^2 \) is low, the model may be underfitting. |
+
+---
+
+### **📌 Calibration Analysis Plots**
+| **Plot Name**  | **Purpose**  | **Example Understanding**  |
+|---------------|------------|---------------------------|
+| **Calibration Curve (Reliability Diagram)**  | Compares **predicted probabilities** with **actual observed probabilities** to check if a model is well-calibrated. | If a model predicts **90% confidence for an event** but it only happens **70% of the time**, the curve will show a miscalibration. |
+| **Isotonic vs. Sigmoid Regression Calibration Curve**  | Compares the effectiveness of **isotonic regression (non-parametric)** and **sigmoid calibration (logistic regression)** in adjusting probabilities. | **Isotonic regression** often results in a nearly **diagonal curve**, indicating well-calibrated probabilities. |
+| **Brier Score Distribution**  | Visualizes **Brier score loss**, measuring the accuracy of predicted probabilities. | A **lower Brier score** means better-calibrated probabilities. |
+
+---
